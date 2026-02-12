@@ -94,7 +94,7 @@ function interactive() {
   prompt();
 }
 
-// Main
+// Main function
 function main() {
   const input = parseArgs(process.argv);
 
@@ -130,7 +130,10 @@ function main() {
   }
 }
 
-main();
+// Only run main if this file is executed directly
+if (require.main === module) {
+  main();
+}
 
 // Export for testing
 module.exports = { add, subtract, multiply, divide };
