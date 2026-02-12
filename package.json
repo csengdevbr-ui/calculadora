@@ -1,0 +1,20 @@
+{
+  "name": "basic-calculator",
+  "version": "1.0.0",
+  "description": "A simple command-line calculator",
+  "main": "src/index.js",
+  "bin": {
+    "calculator": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "build": "pkg . --out-path dist --targets node22-win-x64",
+    "start": "node src/index.js"
+  },
+  "keywords": ["calculator", "cli"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
