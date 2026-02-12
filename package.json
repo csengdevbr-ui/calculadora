@@ -1,20 +1,40 @@
 {
-  "name": "basic-calculator",
+  "name": "windows-neon-calculator",
   "version": "1.0.0",
-  "description": "A simple command-line calculator",
-  "main": "src/index.js",
-  "bin": {
-    "calculator": "./src/index.js"
-  },
+  "description": "Windows Calculator Clone with Neon Green Theme",
+  "main": "src/main.js",
   "scripts": {
-    "test": "node --test tests/",
-    "build": "pkg . --out-path dist --targets node18-win-x64",
-    "start": "node src/index.js"
+    "test": "node --test \"tests/**/*.js\"",
+    "build": "electron-builder --win",
+    "start": "electron .",
+    "pack": "electron-builder --dir"
   },
-  "keywords": ["calculator", "cli"],
+  "keywords": ["calculator", "electron", "windows", "neon"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "pkg": "^5.8.1"
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.calculator.windowsneon",
+    "productName": "Windows Neon Calculator",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "index.html",
+      "styles.css",
+      "calculator.js"
+    ]
   }
 }
