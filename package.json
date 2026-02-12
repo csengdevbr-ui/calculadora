@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node --test tests/",
-    "build": "pkg . --out-path dist --targets node22-win-x64",
+    "build": "pkg . --out-path dist --targets node18-win-x64",
     "start": "node src/index.js"
   },
   "keywords": ["calculator", "cli"],
